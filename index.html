@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Local CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-8">Employee Management System</h1>
+
+        <!-- Register Employee Form -->
+        <div class="card">
+            <h2 class="text-2xl font-semibold mb-4">Register Employee</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="reg_employee_name" placeholder="Employee Name" class="input">
+                <input type="text" id="reg_mobile_number" placeholder="Mobile Number" class="input">
+                <input type="email" id="reg_email" placeholder="Email" class="input">
+                <input type="text" id="reg_team" placeholder="Team" class="input">
+            </div>
+            <button onclick="registerEmployee()" class="btn btn-blue mt-4">Register</button>
+        </div>
+
+        <!-- Retrieve Employee Form -->
+        <div class="card">
+            <h2 class="text-2xl font-semibold mb-4">Retrieve Employee</h2>
+            <div class="flex gap-4">
+                <input type="text" id="retrieve_employee_id" placeholder="Employee ID" class="input flex-grow">
+                <button onclick="retrieveEmployee()" class="btn btn-green">Retrieve</button>
+            </div>
+            <div id="employee_details" class="mt-4"></div>
+        </div>
+
+        <!-- Update Employee Form -->
+        <div class="card">
+            <h2 class="text-2xl font-semibold mb-4">Update Employee</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="update_employee_id" placeholder="Employee ID" class="input">
+                <input type="text" id="update_employee_name" placeholder="Employee Name" class="input">
+                <input type="text" id="update_mobile_number" placeholder="Mobile Number" class="input">
+                <input type="email" id="update_email" placeholder="Email" class="input">
+                <input type="text" id="update_team" placeholder="Team" class="input">
+            </div>
+            <button onclick="updateEmployee()" class="btn btn-yellow mt-4">Update</button>
+        </div>
+
+        <!-- Delete Employee Form -->
+        <div class="card">
+            <h2 class="text-2xl font-semibold mb-4">Delete Employee</h2>
+            <div class="flex gap-4">
+                <input type="text" id="delete_employee_id" placeholder="Employee ID" class="input flex-grow">
+                <button onclick="deleteEmployee()" class="btn btn-red">Delete</button>
+            </div>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message" class="message success"></div>
+        <div id="error" class="message error"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

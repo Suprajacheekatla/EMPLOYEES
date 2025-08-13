@@ -1,0 +1,133 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fallback styles in case Tailwind CDN fails */
+body {
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2937;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.input {
+    border: 1px solid #d1d5db;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-blue {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn-blue:hover {
+    background-color: #2563eb;
+}
+
+.btn-green {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #059669;
+}
+
+.btn-yellow {
+    background-color: #f59e0b;
+    color: #ffffff;
+}
+
+.btn-yellow:hover {
+    background-color: #d97706;
+}
+
+.btn-red {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.btn-red:hover {
+    background-color: #dc2626;
+}
+
+.message {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.success {
+    color: #10b981;
+}
+
+.error {
+    color: #ef4444;
+}
+
+/* Tailwind-specific overrides (if Tailwind loads) */
+@layer components {
+    .input {
+        @apply border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+    .btn {
+        @apply px-4 py-2 rounded font-semibold transition duration-200;
+    }
+    .btn-blue {
+        @apply bg-blue-500 text-white hover:bg-blue-600;
+    }
+    .btn-green {
+        @apply bg-green-500 text-white hover:bg-green-600;
+    }
+    .btn-yellow {
+        @apply bg-yellow-500 text-white hover:bg-yellow-600;
+    }
+    .btn-red {
+        @apply bg-red-500 text-white hover:bg-red-600;
+    }
+}
